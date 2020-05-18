@@ -1,0 +1,33 @@
+.overview-card {
+  /* background: #fcfcfc;
+  color: #2d2d2d;
+  background-image: linear-gradient(
+    to right top,
+    #0085b2,
+    #33668c,
+    #384a64,
+    #2e313e,
+    #1c1c1c
+  ); */
+  /* background: #2d2d2d;
+  color: #fcfcfc; */
+  background: #fcfcfc;
+  color: #2d2d2d;
+  padding: 40px 35px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.card-count {
+  font-size: 52px;
+}
+
+.card-category {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.card-link {
+  font-size: 14px;
+  font-weight: 600;
+}

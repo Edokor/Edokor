@@ -1,0 +1,34 @@
+.site-header {
+  background: #1c1c1c;
+  color: #d9d9d9;
+  display: grid;
+  grid-template-columns: 32px 1fr 158px;
+  grid-gap: 20px;
+  padding: 8px 15px;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.site-logo,
+.site-logo img {
+  height: 36px;
+}
+
+.site-header a,
+.site-header a:visited {
+  color: #d9d9d9;
+  padding: 8px 15px;
+}
+
+.site-header a:hover,
+.site-header a:active,
+.site-header a:focus {
+  color: #4bbeec;
+}
+
+.site-login {
+  justify-self: end;
+}

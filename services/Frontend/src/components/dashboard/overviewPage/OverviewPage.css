@@ -1,0 +1,36 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 40px;
+}
+
+.widget-header,
+.dashboard-page-header {
+  color: #494949;
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 12px;
+}
+
+.shadow-text {
+  text-shadow: 0 0 6px rgba(180, 180, 180, 0.2),
+    0 0 3px rgba(180, 180, 180, 0.2);
+}
+
+.major-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d2d2d;
+  line-height: 1.2;
+}
+
+.minor-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #494949;
+  line-height: 1.2;
+}
+
+.event-widget {
+  grid-column: auto / span 2;
+}

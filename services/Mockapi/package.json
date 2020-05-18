@@ -1,0 +1,17 @@
+{
+  "name": "edokor-mockapi",
+  "version": "1.0.0",
+  "description": "React and Redux Frontend for Edokor",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/apiServer",
+    "prestart": "node src/createMockDb.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "0.14.2"
+  }
+}

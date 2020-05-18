@@ -1,0 +1,9 @@
+.overview-widget {
+  grid-column: auto / span 5;
+}
+
+.overview-widget .widget-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40px;
+}

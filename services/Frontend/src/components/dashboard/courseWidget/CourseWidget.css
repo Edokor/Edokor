@@ -1,0 +1,39 @@
+.course-widget {
+  grid-column: auto / span 3;
+}
+
+.course-widget .widget-body {
+  display: grid;
+  grid-gap: 5px;
+  height: 235px;
+}
+
+.extra-course-card {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  height: 40px;
+}
+
+.empty-course-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: calc(100vh - 217.5px);
+  text-align: center;
+  color: var(--neutral-color);
+  white-space: normal;
+}
+
+.course-widget .empty-course-card {
+  height: 235px;
+}
+
+.empty-course-card a {
+  color: #494949;
+}
+
+.empty-course-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: #e9eff1;
+  color: #1c1c1c;
+}
+
+.zero-line-height {
+  line-height: 0;
+}
+
+a,
+a:visited {
+  color: #4bbeec;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: #009fd9;
+}
+
+::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
+  background-color: #dddddd;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #dddddd;
+}
+
+::-webkit-scrollbar-thumb {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); */
+  background-color: #949494;
+}

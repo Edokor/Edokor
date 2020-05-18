@@ -1,0 +1,85 @@
+.dashboard-header {
+  background: #1c1c1c;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+}
+
+.site-logo {
+  place-self: center;
+}
+
+.site-info {
+  background: #fcfcfc;
+  padding: 8px 15px;
+  display: flex;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.user-info,
+.user-profile {
+  display: flex;
+}
+
+.user-profile {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.profile-info {
+  display: grid;
+  grid-template-rows: 16px 16px;
+  justify-items: end;
+  align-items: center;
+  font-size: 14px;
+  padding: 4px 8px;
+  color: #494949;
+}
+
+.header-edokor-logo,
+.header-school-logo {
+  overflow: hidden;
+}
+
+.header-edokor-logo img,
+.header-school-logo img {
+  height: 36px;
+}
+
+.notification-icon img {
+  width: 28px;
+  padding: 8px 0px 4px 0;
+  cursor: pointer;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.notification-count {
+  display: grid;
+  grid-template-rows: 12px;
+  justify-items: center;
+  align-items: center;
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background: #4bbeec;
+  background-image: linear-gradient(
+    to right top,
+    #0085b2,
+    #1d93c0,
+    #2fa1cf,
+    #3dafdd,
+    #4bbeec
+  );
+  color: #fcfcfc;
+  border-radius: 6px;
+  font-size: 9px;
+  font-weight: 600;
+  transform: translate(16px, 8px);
+}

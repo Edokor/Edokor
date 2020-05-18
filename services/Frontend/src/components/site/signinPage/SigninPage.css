@@ -1,0 +1,67 @@
+.user-action-container {
+  background-image: url('/images/site/gradient-background.png');
+  background-repeat: no-repeat;
+  background-size: 100vw calc(100% + 0.5px);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.user-action-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 75.2px);
+  width: 370px;
+  padding: 40px;
+}
+
+.site-page-header {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.account-link {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.account-link a {
+  margin-left: 6px;
+}
+
+.remember-forgot a,
+.account-link {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.laptop-img img {
+  width: 30vw;
+}
+
+.error-field {
+  background: #ec4b4b;
+  color: #fcfcfc;
+  height: 35px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 9.5px 12px;
+  margin: 12px 0;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.error-show {
+  opacity: 1;
+}
