@@ -25,7 +25,9 @@ module.exports = {
     new webpack.DefinePlugin({
       // This global makes sure React is build in prod mode.
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.API_URL': JSON.stringify('http://localhost:3001'),
+      'process.env.API_URL': JSON.stringify(
+        'http://ip172-18-0-51-br1p6atim9m000870ehg-80.direct.labs.play-with-docker.com/'
+      ),
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
