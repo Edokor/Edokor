@@ -26,9 +26,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.API_URL': JSON.stringify(
-        'http://ip172-18-0-51-br1p6atim9m000870ehg-80.direct.labs.play-with-docker.com/'
-      ),
+      'process.env.API_URL': JSON.stringify('http://49.50.97.163/'),
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
