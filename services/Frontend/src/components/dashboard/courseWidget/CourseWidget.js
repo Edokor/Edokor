@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -76,13 +77,13 @@ const CourseWidget = (props) => {
                 {canCreate ? (
                   <a href="/dashboard/courses/create">
                     <div className="zero-line-height">
-                      <img src="/images/dashboard/icon-insert.png" />
+                      <img src="/public/images/dashboard/icon-insert.png" />
                     </div>
                     <div>Create</div>
                   </a>
                 ) : (
                   <div className="zero-line-height">
-                    <img src="/images/dashboard/icon-warning.png" />
+                    <img src="/public/images/dashboard/icon-warning.png" />
                   </div>
                 )}
               </div>
@@ -109,7 +110,7 @@ const CourseWidget = (props) => {
                   >
                     <a href="/dashboard/courses/create">
                       <div className="zero-line-height">
-                        <img src="/images/dashboard/icon-insert.png" />
+                        <img src="/public/images/dashboard/icon-insert.png" />
                       </div>
                       <div>Create</div>
                     </a>
@@ -119,7 +120,7 @@ const CourseWidget = (props) => {
                     className="course-card extra-course-card"
                     style={{ height: 40 + (3 - props.course.length) * 65 }}
                   >
-                    <a href="/dashboard/courses">More</a>
+                    <NavLink to="/dashboard/courses">More</NavLink>
                   </div>
                 )}
               </>

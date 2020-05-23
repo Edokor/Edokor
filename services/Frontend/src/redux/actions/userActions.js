@@ -46,6 +46,26 @@ export const signinUserAction = (email, password) => {
   }
 }
 
+export const signupUserAction = (name, email, password, role) => {
+  return (dispatch) => {
+    dispatch(beginApiCall())
+    return userApi
+      .signupUser(name, email, password, role)
+      .then((response) => {
+        if (response.status == 'Success') {
+          dispatch(signupUserSuccess(response.user))
+        } else {
+          dispatch(signupUserError(response.error))
+          throw response.error
+        }
+      })
+      .catch((error) => {
+        dispatch(apiCallError(error))
+        throw error
+      })
+  }
+}
+
 export const signoutUserAction = (user) => {
   return (dispatch) => {
     localStorage.removeItem(user)

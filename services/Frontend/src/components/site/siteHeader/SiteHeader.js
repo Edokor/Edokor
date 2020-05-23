@@ -8,7 +8,7 @@ const SiteHeader = (props) => {
   return (
     <div className="site-header">
       <div className="site-logo zero-line-height">
-        <img src="/images/edokor-logo.png" alt="Edokor" />
+        <img src="/public/images/edokor-logo.png" alt="Edokor" />
       </div>
       <div className="site-navigation">
         <NavLink to="/" exact>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import './CourseCard.css'
@@ -65,7 +66,7 @@ const CourseCard = ({ course, teacher, role, compact, cardView }) => {
       </div>
 
       <div className="course-action">
-        <a href="/dashboard/courses/abc">{action}</a>
+        <NavLink to="/dashboard/courses">More</NavLink>
       </div>
     </div>
   )

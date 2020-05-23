@@ -90,7 +90,7 @@ const CourseListPage = (props) => {
             setCardView(true)
           }}
         >
-          <img src="/images/dashboard/icon-cardview.png" />
+          <img src="/public/images/dashboard/icon-cardview.png" />
         </button>
         <button
           className={!cardView ? 'selected' : ''}
@@ -98,7 +98,7 @@ const CourseListPage = (props) => {
             setCardView(false)
           }}
         >
-          <img src="/images/dashboard/icon-listview.png" />
+          <img src="/public/images/dashboard/icon-listview.png" />
         </button>
       </div>
     </div>

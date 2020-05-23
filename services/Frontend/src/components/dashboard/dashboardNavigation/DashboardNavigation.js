@@ -10,49 +10,49 @@ const DashboardNavigation = ({ sidenavOpen, sidenavToggle }) => {
       <div className="dashboard-links">
         <NavLink to="/dashboard" exact>
           <div className="navbar-icon">
-            <img src="/images/dashboard/icon-dashboard.png" />
+            <img src="/public/images/dashboard/icon-dashboard.png" />
           </div>
           <span>DASHBOARD</span>
         </NavLink>
         <NavLink to="/dashboard/courses">
           <div className="navbar-icon">
-            <img src="/images/dashboard/icon-course.png" />
+            <img src="/public/images/dashboard/icon-course.png" />
           </div>
           <span>COURSES</span>
         </NavLink>
         <NavLink to="/dashboard/calendar">
           <div className="navbar-icon">
-            <img src="/images/dashboard/icon-calendar.png" />
+            <img src="/public/images/dashboard/icon-calendar.png" />
           </div>
           <span>CALENDAR</span>
         </NavLink>
         <NavLink to="/dashboard/discussions">
           <div className="navbar-icon">
-            <img src="/images/dashboard/icon-discussion.png" />
+            <img src="/public/images/dashboard/icon-discussion.png" />
           </div>
           <span>DISCUSSIONS</span>
         </NavLink>
         <NavLink to="/dashboard/events">
           <div className="navbar-icon">
-            <img src="/images/dashboard/icon-event.png" />
+            <img src="/public/images/dashboard/icon-event.png" />
           </div>
           <span>EVENTS</span>
         </NavLink>
         <NavLink to="/dashboard/announcements">
           <div className="navbar-icon">
-            <img src="/images/dashboard/icon-announcement.png" />
+            <img src="/public/images/dashboard/icon-announcement.png" />
           </div>
           <span>ANNOUNCEMENTS</span>
         </NavLink>
         <NavLink to="/dashboard/profile">
           <div className="navbar-icon">
-            <img src="/images/dashboard/icon-profile.png" />
+            <img src="/public/images/dashboard/icon-profile.png" />
           </div>
           <span>PROFILE</span>
         </NavLink>
         <NavLink to="/dashboard/setting">
           <div className="navbar-icon">
-            <img src="/images/dashboard/icon-setting.png" />
+            <img src="/public/images/dashboard/icon-setting.png" />
           </div>
           <span>SETTING</span>
         </NavLink>
@@ -61,7 +61,7 @@ const DashboardNavigation = ({ sidenavOpen, sidenavToggle }) => {
         className={'dashboard-toogle' + (sidenavOpen ? ' expand' : '')}
         onClick={() => sidenavToggle()}
       >
-        <img src="/images/dashboard/icon-toogle.png" />
+        <img src="/public/images/dashboard/icon-toogle.png" />
       </div>
     </div>
   )

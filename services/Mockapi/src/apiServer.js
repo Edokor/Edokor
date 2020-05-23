@@ -10,12 +10,15 @@ ID: https://github.com/typicode/json-server/issues/613#issuecomment-325393041
 Relevant source code: https://github.com/typicode/json-server/blob/master/src/cli/run.js
 */
 
-/* eslint-disable no-console */
+/* eslint-disable no-console */ /* eslint-disable no-console */
+const fs = require('fs')
 const jsonServer = require('json-server')
 const server = jsonServer.create()
 const path = require('path')
-const router = jsonServer.router(path.join(__dirname, 'db.json'))
-const db = require(path.join(__dirname, 'db.json'))
+
+const filepath = path.join(__dirname, 'db.json')
+const router = jsonServer.router(filepath)
+let db = require(filepath)
 
 // Can pass a limited number of options to this to override (some) defaults. See https://github.com/typicode/json-server#api
 const middlewares = jsonServer.defaults({
@@ -66,7 +69,7 @@ server.post('/course/', function (req, res) {
   return res.json({ status: 'Success', course: result })
 })
 
-server.post('/user/student', function (req, res) {
+server.post('/user/student/', function (req, res) {
   const result = []
   let user
   for (user of db.users.filter((user) => user.role == 'Student')) {
@@ -77,7 +80,7 @@ server.post('/user/student', function (req, res) {
   return res.json({ status: 'Success', student: result })
 })
 
-server.post('/user/teacher', function (req, res) {
+server.post('/user/teacher/', function (req, res) {
   const result = []
   let user
   for (user of db.users.filter((user) => user.role == 'Teacher')) {
@@ -89,11 +92,65 @@ server.post('/user/teacher', function (req, res) {
 })
 
 server.post('/user/signup/', function (req, res) {
-  return res.json({ status: 'Success' })
+  const error = validateSignupUser(req.body)
+  if (error) {
+    return res.json({ status: 'Error', error: error })
+  } else {
+    try {
+      const uid =
+        req.body.role.toLowerCase() +
+        '_' +
+        Math.floor(Math.random() * 9999999999)
+      const user = {
+        uid: uid,
+        rollNo: '',
+        profileImage: 'https://picsum.photos/200',
+        username: req.body.email,
+        email: req.body.email,
+        password: req.body.password,
+        hash: uid,
+        name: req.body.name,
+        role: req.body.role,
+        phone: '',
+        address: {
+          line1: '',
+          line2: '',
+          city: '',
+          state: '',
+          country: '',
+          zip: '',
+        },
+        dateOfBirth: '',
+        school: '',
+        classroom: [],
+        course: [],
+        teacher: [],
+        student: [],
+        isVerified: true,
+        createdOn: Date.now(),
+        modifiedOn: Date.now(),
+      }
+
+      db = { ...db, users: db.users.concat([user]) }
+      const data = JSON.stringify(db)
+      fs.writeFile(filepath, data, function (err) {
+        if (err) {
+          return res.json({ status: 'Error', error: err })
+        } else {
+          return res.json({ status: 'Success', user: user })
+        }
+      })
+    } catch (err) {
+      return res.json({
+        status: 'Error',
+        error: err,
+      })
+    }
+  }
 })
 
 server.post('/user/signin/', function (req, res) {
-  const error = validateUser(req.body)
+  const error = validateSigninUser(req.body)
   if (error) {
     return res.json({ status: 'Error', error: error })
   } else {
@@ -147,8 +204,16 @@ server.listen(port, () => {
 //   return ''
 // }
 
-function validateUser(user) {
+function validateSigninUser(user) {
   if (!user.email) return 'Email is required.'
   if (!user.password) return 'Password is required.'
+  return ''
+}
+
+function validateSignupUser(user) {
+  if (!user.name) return 'Name is required.'
+  if (!user.email) return 'Email is required.'
+  if (!user.password) return 'Password is required.'
+  if (!user.role) return 'Role is required.'
   return ''
 }

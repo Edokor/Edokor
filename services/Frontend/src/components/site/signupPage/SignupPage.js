@@ -19,6 +19,7 @@ const SignupPage = (props) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [agreeTerms, setAgreeTerms] = useState(false)
   const [error, setError] = useState('')
 
   const onSchoolNameChange = (event) => {
@@ -33,6 +34,9 @@ const SignupPage = (props) => {
   const onConfirmPasswordChange = (event) => {
     setConfirmPassword(event.target.value)
   }
+  const onAgreeTermsChange = () => {
+    setAgreeTerms(!agreeTerms)
+  }
   const onError = (message) => {
     setError(message)
     setTimeout(() => setError(''), 3000)
@@ -41,7 +45,25 @@ const SignupPage = (props) => {
   const handleSignup = async (event) => {
     event.preventDefault()
     try {
-      await props.actions.signinUserAction(email, password)
+      if (
+        schoolName == '' ||
+        email == '' ||
+        password == '' ||
+        confirmPassword == ''
+      ) {
+        onError('Provide all the required fields')
+      } else if (password != confirmPassword) {
+        onError('Confirm Password should match Password')
+      } else if (!agreeTerms) {
+        onError('Agree to terms before signup')
+      } else {
+        await props.actions.signupUserAction(
+          schoolName,
+          email,
+          password,
+          'School'
+        )
+      }
     } catch (error) {
       onError(error)
     }
@@ -82,7 +104,11 @@ const SignupPage = (props) => {
             onChange={onConfirmPasswordChange}
           />
           <div className="remember-forgot">
-            <CheckboxInput text="I agree to terms and conditions" />
+            <CheckboxInput
+              text="I agree to terms and conditions"
+              checked={agreeTerms}
+              onChange={onAgreeTermsChange}
+            />
           </div>
           <FormButton type="submit" text="Signup" />
           <div className={'error-field' + (error != '' ? ' error-show' : '')}>
@@ -96,7 +122,7 @@ const SignupPage = (props) => {
         </div>
       </div>
       <div className="laptop-img zero-line-height">
-        <img src="/images/site/laptop.png" />
+        <img src="/public/images/site/laptop.png" />
       </div>
     </div>
   )
@@ -116,8 +142,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
-      signinUserAction: bindActionCreators(
-        userActions.signinUserAction,
+      signupUserAction: bindActionCreators(
+        userActions.signupUserAction,
         dispatch
       ),
     },

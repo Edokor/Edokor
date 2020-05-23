@@ -75,7 +75,7 @@ const SigninPage = (props) => {
         </div>
       </div>
       <div className="laptop-img zero-line-height">
-        <img src="/images/site/laptop.png" />
+        <img src="/public/images/site/laptop.png" />
       </div>
     </div>
   )

@@ -9,18 +9,18 @@ const DashboardHeader = ({ user, onSignout }) => {
       <div className="site-logo">
         <a href="/">
           <div className="header-edokor-logo">
-            <img src="/images/edokor-logo.png" alt="Edokor" />
+            <img src="/public/images/edokor-logo.png" alt="Edokor" />
           </div>
         </a>
       </div>
       <div className="site-info">
         <div className="header-school-logo">
-          <img src="/images/profile/dps-logo.png" alt="Edokor" />
+          <img src="/public/images/profile/dps-logo.png" alt="Edokor" />
         </div>
         <div className="user-info">
           <div className="notification-icon">
             <div className="notification-count">5</div>
-            <img src="/images/dashboard/icon-notification.png" />
+            <img src="/public/images/dashboard/icon-notification.png" />
           </div>
           <div className="user-profile" onClick={onSignout}>
             <div className="profile-info">
