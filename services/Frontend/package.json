@@ -6,7 +6,7 @@
     "test": "jest --watchAll",
     "test:ci": "jest",
     "prebuild": "rimraf ./build && mkdir build",
-    "build": "webpack --config webpack.config.prod.js && cp -R images build",
+    "build": "webpack --config webpack.config.prod.js && cp -R public build",
     "serve": "http-server build -p 8080 --push-state"
   },
   "jest": {
